@@ -2,12 +2,8 @@ $( document ).ready(() => {
     let selectedAmenities = {};
     $('.amenities  input[type="checkbox"]').on('change', function () {
 	let amenity = $(this);
-	console.log(amenity);
 	let amenityId = amenity.data('id');
-	console.log(amenityId);
 	let amenityName = amenity.data('name');
-	console.log(amenityName);
-	console.log(amenity.checked);
 
 	if (amenity.prop('checked')) {
 	    selectedAmenities[amenityId] = amenityName;
@@ -16,5 +12,13 @@ $( document ).ready(() => {
 	}
 
 	$('.amenities h4').text(Object.values(selectedAmenities).join(', '));
+    });
+
+    $.get('http://0.0.0.0:5001/api/v1/status/', function (data) {
+	if (data.status === 'OK') {
+	    $('div#api_status').addClass('available');
+	} else {
+	    $('div#api_status').removeClass('available');
+	}
     });
 });
