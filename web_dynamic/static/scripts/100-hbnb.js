@@ -31,11 +31,9 @@ $( document ).ready(() => {
 	$('.locations h4').text(Object.values(selectedStates).join(', '));
     });
 
-    console.log(selectedStates);
-
     let selectedCities = {};
 
-    $('.locations li input[type="checkbox"]').on('change', function () {
+    $('.locations ul li input[type="checkbox"]').on('change', function () {
 	let city = $(this);
 	let cityId = city.data('id');
 	let cityName = city.data('name');
@@ -48,8 +46,6 @@ $( document ).ready(() => {
 
 	$('.locations h4').text(Object.values(selectedCities).join(', '));
     });
-
-    console.log(selectedCities);
 
     $.get('http://0.0.0.0:5001/api/v1/status/', function (data) {
 	if (data.status === 'OK') {
@@ -105,7 +101,9 @@ $( document ).ready(() => {
 	let amenitiesIds = Object.keys(selectedAmenities);
 	let statesIds = Object.keys(selectedStates);
 	let citiesIds = Object.keys(selectedCities);
-	console.log(amenitiesIds);
+	console.log(selectedAmenities);
+	console.log(selectedStates);
+	console.log(selectedCities);
 	$.post({
 	    url: 'http://0.0.0.0:5001/api/v1/places_search',
 	    contentType: 'application/json',
