@@ -51,7 +51,7 @@ button:hover {
     width: 25%;
 }
 
-.amenities h4 {
+.filters h4 {
     max-width: 100%;
     height: max-content;
     overflow: hidden;
@@ -108,4 +108,8 @@ button:hover {
 .amenities:hover .popover,
 .locations:hover .popover {
     visibility: visible;
+}
+
+input[type=checkbox] {
+    margin-right: 10px;
 }
