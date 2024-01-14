@@ -34,7 +34,7 @@
 }
 .places h2 {
     font-size: 30px;
-    text-align: center;
+    text-align: left;
     margin-top: 0;
 }
 .title_box {
@@ -98,4 +98,10 @@
 
 .user {
   margin-bottom: 1.5%;
+}
+
+.reviews h2 {
+    font-size: 25px;
+    margin-top: 10%;
+    border-bottom: 1px solid #DDDDDD;
 }
